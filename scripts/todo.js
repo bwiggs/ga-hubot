@@ -2,18 +2,18 @@
 //   To Do list manager
 //
 // Commands:
-//   hubot todo add My Task - Hubot goes to the store and buy up to 99 bottles of beer
-//   hubot todo delete My Task - Hubot take a beer off the wall and sings!
-//   hubot todo list - Hubot take a beer off the wall and sings!
+//   hubot add todo My Task - Adds "My Task" to your todo list
+//   hubot delete todo My Task - Deletes "My Task" to your todo list
+//   hubot todo list - Shows you your todo list.
 
 module.exports = function(robot) {
 
   // We'll use an array to store our todos.
   var todos = [];
 
-  robot.respond(/todo add (.*)/i, add);
+  robot.respond(/add todo (.*)/i, add);
   robot.respond(/todo list/i, list);
-  robot.respond(/todo delete (.*)/i, deleteTodo);
+  robot.respond(/delete todo (.*)/i, deleteTodo);
 
   function add(msg) {
     todos.push(msg.match[1]);     // add the item to the todo array.
