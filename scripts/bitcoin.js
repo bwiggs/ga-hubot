@@ -1,3 +1,9 @@
+// Description:
+//   Bitcoin Price Retriever
+//
+// Commands:
+//   hubot bitcoin - Spits out the latest bitcoin price from coindesk.com
+
 module.exports = function(robot) {
 
   var COINBASE_API = 'https://api.coindesk.com/v1/bpi/currentprice.json';
