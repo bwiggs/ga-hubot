@@ -11,7 +11,7 @@ module.exports = function(robot) {
   robot.respond(/bitcoin/i, function(msg) {
     msg.http(COINBASE_API).get()(function(err, resp, json) {
       var data = JSON.parse(json);
-      console.log('Bitcoins are currently worth $' + data.bpi.USD.rate_float + ' - http://www.coindesk.com/price/');
+      msg.send('Bitcoins are currently worth $' + data.bpi.USD.rate_float + ' - http://www.coindesk.com/price/');
     });
   });
 };
